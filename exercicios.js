@@ -31,7 +31,7 @@ Data da entrega: até 19/03/2026 */
 
 // ******************************** EXERCÍCIOS *******************************
 
-// 1- Crie uma função que liste todos os produtos em estoque.
+// 1- Crie uma função que liste todos os IDs e nomes dos produtos em estoque.
 
 // 2- Crie uma função que liste todos os produtos em estoque, de acordo com a curva ABC (A, B ou C) selecionada pelo usuário.
 
