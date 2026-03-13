@@ -1,4 +1,4 @@
-let produtos = [
+export let produtos = [
   { id: 1, nome: "Coca-cola 2L", preco_venda: 10.0, preco_compra: 5.0, estoque: 100, rotatividade: "alta", curva_abc: "A" },
   { id: 2, nome: "Pepsi 2L", preco_venda: 9.0, preco_compra: 4.5, estoque: 80, rotatividade: "alta", curva_abc: "B" },
   { id: 3, nome: "Fanta Laranja 2L", preco_venda: 8.0, preco_compra: 4.0, estoque: 60, rotatividade: "media", curva_abc: "B" },
@@ -158,7 +158,7 @@ console.table(pedido_Compra)
 
 let valorEstoque = produtos.reduce((cofre,produto)=> cofre + (produto.preco_compra * produto.estoque),0)
 
-console.log(valorEstoque.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}));*/
+console.log(valorEstoque.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}));
 
 let lucroTotal = produtos.reduce ((lucro, produto) => lucro +  (produto.preco_venda * produto.estoque),0);
 console.log(lucroTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}));
@@ -166,8 +166,19 @@ console.log(lucroTotal.toLocaleString("pt-BR", {style: "currency", currency: "BR
 let valorTotalEstoque = produtos.reduce ((soma,produto) => soma + produto.estoque,0);
 console.log(valorTotalEstoque);
 
+//corrigir:
 let precoMedio = produtos.reduce ((media, produto) => media + (produto.estoque / produto.preco_compra),0)
 console.log(precoMedio.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}));
+
+* ele busca a informação em todo o banco de dados, vare tudo *
+
+let estoque = produtos.filter(produto=> produto.estoque <=50)
+console.table(estoque);
+
+* ele busca somente um ID, busca exata *
+
+let estoqueFind = produtos.find((produto) => produto.estoque <=50);
+console.log(estoqueFind);*/ 
 
 
 
