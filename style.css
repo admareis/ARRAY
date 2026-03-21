@@ -1,0 +1,40 @@
+/*reset css*/
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+}
+fieldset{
+    height: 90%;
+}
+
+#fieldsetDisplay{
+    width: 60%;
+}
+
+#fieldsetFuncoes{
+    width: 40%;
+}
+
+#containerCurvaABC{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.selectCurva{
+    display: flex;
+    flex-direction: column;
+}
+#containerDisplay{    
+    display: grid;
+    grid-template-columns: 1fr 4fr max-content max-content;
+    padding: 10px;
+    gap: 10px;
+}
