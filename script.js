@@ -3,9 +3,10 @@ import{produtos} from"./produtos.js";
 const elemento ={
     btnCurva:document.querySelectorAll(".btnCurva"),
     containerDisplay:document.querySelector("#containerDisplay"),
+    btnListarTodos: document.getElementById("listarTodos"),
 };
 
-console.log(elemento.containerDisplay);
+console.log(elemento.btnListarTodos);
 
 elemento.btnCurva.forEach((item)=>{
 item.addEventListener("click", (evento)=>{
@@ -20,8 +21,9 @@ function listarProdutosPorCurva(curva){
     inserirDadosCurvaABC(produtoCurva);
     return produtoCurva;
 }
- // CRIA UMA UM OBJETO PARA GERAR OS PARAGRAFOS - AINDA SEM DADOS - PURO //
+ // CRIA UM OBJETO PARA GERAR OS PARAGRAFOS - AINDA SEM DADOS - PURO //
 function inserirDadosCurvaABC(dados){
+    elemento.containerDisplay.innerHTML = ""; // reset html// 
     let colunasGRID = {
         id: document.createElement("p"),   
         nome: document.createElement("p"),
@@ -36,4 +38,46 @@ function inserirDadosCurvaABC(dados){
     colunasGRID.estoque.innerText = "ESTOQUE";
 
     elemento.containerDisplay.append(colunasGRID.id,colunasGRID.nome,colunasGRID.preco_venda,colunasGRID.estoque)
+
+    console.table(dados);
+
+    let dadosFiltrados = dados;
+
+    dadosFiltrados.forEach((item)=>{
+        let produto ={
+            id:item.id,
+            nome:item.nome,
+            preco_venda:item.preco_venda,
+            estoque:item.estoque,
+        };
+
+        // CRIAÇÃO DOS PARAGRAFOS(ITEM) DA COLUNA // 
+
+        let id = document.createElement("p");
+        let nome= document.createElement("p");
+        let preco_venda= document.createElement("p");
+        let estoque = document.createElement("p");
+
+        // DEFINIÇÃO DO TEXTO DE CADA COLUNA //
+
+        id.innerText = produto.id;
+        nome.innerText = produto.nome;
+        preco_venda.innerText = produto.preco_venda;
+        estoque.innerText = produto.estoque;
+
+        // ADICIONAR (APPEND) NA DETERMINADA ORDEM // 
+        elemento.containerDisplay.append(id, nome, preco_venda, estoque);
+
+    });
+}
+
+elemento. btnListarTodos.addEventListener("click", (evento)=>{
+    console.log(evento);
+});
+
+function listaIDeNome() {
+  return produtos.map((produto) => ({
+    id: produto.id,
+    nome: produto.nome,
+  }));
 }

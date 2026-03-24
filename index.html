@@ -1,41 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestão de Estoque</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <fieldset id="fieldsetFuncoes">
-        <legend>Gestão de Estoque</legend>
+      <legend>Gestão de Estoque</legend>
+      <div class="containers">
+        <h3>Busca por Curva</h3>
         <div id="containerCurvaABC">
+          <div class="selectCurva">
+            <label for="A">Curva A</label>
+            <input class="btnCurva" type="radio" name="curvaABC" id="A" />
+          </div>
 
-        <div class="selectCurva">
-        <label for="A">Curva A</label>
-        <input class="btnCurva" type="radio" name="curvaABC" id="A">
-        </div>
+          <div class="selectCurva">
+            <label for="B">Curva B</label>
+            <input class="btnCurva" type="radio" name="curvaABC" id="B" />
+          </div>
 
-        <div class="selectCurva">
-        <label for="B">Curva B</label>
-        <input class="btnCurva" type="radio" name="curvaABC" id="B">
+          <div class="selectCurva">
+            <label for="C">Curva C</label>
+            <input class="btnCurva" type="radio" name="curvaABC" id="C" />
+          </div>
         </div>
-        
-        <div class="selectCurva">
-        <label for="C">Curva C</label>
-        <input class="btnCurva" type="radio" name="curvaABC" id="C">
-        </div>
-        </div>
+      </div>
+
+      <div class="containers">
+        <button id="listarTodos">Listar todos os produtos</button>
+      </div>
     </fieldset>
 
     <fieldset id="fieldsetDisplay">
-        <legend>Visualizar</legend>
-        <div id="containerDisplay">            
-        </div>
+      <legend>Visualizar</legend>
+      <div id="containerDisplay"></div>
     </fieldset>
-
-
-</body>
-<script src="./script.js" type="module"></script> 
+  </body>
+  <script src="./script.js" type="module"></script>
 </html>
